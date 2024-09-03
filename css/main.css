@@ -1,0 +1,991 @@
+/*Обнуление*/
+@import url("https://fonts.googleapis.com/css?family=Montserrat:regular,500,600,700&display=swap");
+
+* {
+   padding: 0;
+   margin: 0;
+   border: 0;
+   box-sizing: border-box;
+}
+
+html,
+body {
+   font-family: "Montserrat", sans-serif;
+   font-weight: bold;
+   padding: 0;
+   margin: 0;
+   border: 0;
+   box-sizing: border-box;
+   background-color: #221D17;
+   color: #ffffff;
+   scroll-behavior: smooth
+}
+
+input,
+button,
+textarea {
+   font-family: inherit;
+}
+
+button {
+   cursor: pointer;
+}
+
+.btn {
+   font-family: "Montserrat", sans-serif;
+   display: flex;
+   min-height: 82px;
+   padding: 25px 90px;
+   color: #FFFFFF;
+   border: 2px solid white;
+   border-radius: 77px;
+   justify-content: center;
+   align-items: center;
+   text-align: center;
+   font-weight: 500;
+   font-size: 30px;
+   background-color: rgba(34, 29, 23, 68%);
+   text-transform: uppercase;
+   transition: .5s ease;
+   position: relative;
+   overflow: hidden;
+   z-index: 1;
+}
+
+.btn::after {
+   content: '';
+   position: absolute;
+   bottom: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   /* background-color: rgba(34, 29, 23, 68%); */
+
+   z-index: -2;
+}
+
+.btn::before {
+   content: '';
+   position: absolute;
+   bottom: 0;
+   left: 0;
+   width: 0%;
+   height: 100%;
+   background-color: #F5D9A9;
+   background-image: linear-gradient(90deg, #C0A26D, #F5D9A9, #B1966A);
+   transition: all .3s;
+   z-index: -1;
+}
+
+
+.btn:hover {
+   color: #fff;
+   border: 2px solid #Fff;
+}
+
+.btn:hover::before {
+   width: 100%;
+}
+
+ul,
+li {
+   display: block;
+   list-style: none;
+   margin: 0;
+   padding: 0;
+}
+
+p {
+   margin: 0;
+   padding: 0;
+}
+
+a {
+   text-decoration: none;
+   color: #000;
+}
+
+img {
+   display: block;
+   object-fit: cover;
+   max-width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+   font-family: "Montserrat", sans-serif;
+   font-weight: bold;
+   font-size: 37px;
+   background: linear-gradient(90deg, #C0A26D, #F5D9A9, #B1966A, #C0A26D);
+   /* Додаємо один і той же колір на початку і в кінці */
+   background-size: 300%;
+   /* Щоб створити ефект руху */
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+   animation: gradientAnimation 3s ease-in-out infinite;
+   /* Анімація 5 секунд, яка повторюється нескінченно */
+}
+
+@keyframes gradientAnimation {
+   0% {
+      background-position: 0% 50%;
+      /* Початкове положення градієнту */
+   }
+
+   50% {
+      background-position: 100% 50%;
+      /* Переміщення градієнту до кінця */
+   }
+
+   100% {
+      background-position: 0% 50%;
+      /* Повернення до початкового положення */
+   }
+}
+
+
+/* .ibg {
+   background-position: center;
+   background-size: cover;
+   background-repeat: no-repeat;
+   position: relative;
+}
+
+.ibg img {
+   width: 0;
+   height: 0;
+   position: absolute;
+   top: 0;
+   left: 0;
+   opacity: 0;
+   visibility: hidden;
+} */
+
+/*---CASE------------------------------------------------------------------------------------------------------------*/
+.wrapper {
+   min-height: 100%;
+   overflow: hidden;
+}
+
+[class*="__container"] {
+   max-width: 1050px;
+   margin: 0 auto;
+   padding: 0px 15px;
+   box-sizing: content-box;
+}
+
+/*---PAGES------------------------------------------------------------------------------------------------------------*/
+.page__main {
+   padding: 60px 0;
+   background: url('../img/main/bg-main.png') no-repeat center / cover;
+   background-attachment: fixed;
+}
+
+.page__about {
+   padding: 80px 0px;
+}
+
+.page__services {
+   padding: 80px 0;
+   position: relative;
+}
+
+.page__advantages {
+   padding-top: 80px;
+   padding-bottom: 90px;
+}
+
+
+
+.page__feedback {
+   padding: 80px 0;
+}
+
+@media (max-width: 768px) {
+   .page__main {
+      padding: 60px 0;
+   }
+
+   .page__about {
+      padding: 40px 0px;
+   }
+
+   .page__services {
+      padding: 40px 0;
+      position: relative;
+   }
+
+   .page__advantages {
+      padding-top: 40px;
+      padding-bottom: 45px;
+   }
+
+
+
+   .page__feedback {
+      padding: 40px 0;
+   }
+}
+
+/*---HEADER------------------------------------------------------------------------------------------------------------*/
+
+.header {
+   min-height: 130px;
+   padding-bottom: 7px;
+   top: -100px;
+   left: 0;
+   width: 100%;
+   z-index: 100;
+   transition: all .5s ease;
+   background-color: #221D17;
+
+}
+
+.header.fixed {
+   position: fixed;
+   background-color: #4d4133;
+   transform: translateY(100px);
+   opacity: 0.9;
+   padding-bottom: 7px;
+
+}
+
+.header__container {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+
+}
+
+
+/* .header.fixed .header__logo {
+   height: 123px;
+   overflow: hidden;
+} */
+
+.header__logo {}
+
+.header__menu {}
+
+.menu {}
+
+.menu__icon {}
+
+.icon-menu {}
+
+.menu__body {}
+
+.menu__list {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   gap: 54px;
+}
+
+.menu__item {}
+
+.menu__link {
+   font-weight: 400;
+   font-size: 26px;
+   color: #F6F4F4;
+   -webkit-transition: all 0.5s ease;
+   transition: all 0.5s ease;
+}
+
+.menu__link:hover {
+   color: #C0A26D;
+}
+
+
+@media (max-width: 768px) {
+   .menu__list {
+      gap: 30px;
+   }
+
+   .menu__link {
+      font-size: 22px;
+   }
+}
+
+@media (max-width: 535px) {
+   .header {
+      min-height: 20px;
+      padding: 10px 0;
+   }
+
+   .header__logo {
+      display: none;
+   }
+
+   .header__menu {
+      flex: 1 1 auto;
+   }
+
+   .header.fixed {
+      padding: 7px 0;
+
+   }
+}
+
+@media (max-width: 420px) {
+   .menu__link {
+      font-size: 17px;
+   }
+
+   .menu__list {
+      gap: 20px;
+   }
+}
+
+/*---MAIN-BLOCK------------------------------------------------------------------------------------------------------------*/
+
+
+.main {}
+
+.main__container {}
+
+.main__block {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   gap: 80px;
+}
+
+.main__photo {}
+
+.main__button {}
+
+.main__link {}
+
+@media (max-width: 600px) {
+   .main__link {
+      padding: 15px 40px;
+      font-size: 26px;
+   }
+}
+
+@media (max-width: 440px) {
+   .main__link {
+
+      font-size: 20px;
+   }
+}
+
+/*---ABOUT------------------------------------------------------------------------------------------------------------*/
+
+
+
+.about {}
+
+.about__container {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   gap: 107px;
+}
+
+.about__header {
+   width: 100%;
+}
+
+.about__list {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   gap: 65px;
+}
+
+
+
+.item-about {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   gap: 25px;
+}
+
+.item-about:nth-child(2) {
+   margin-right: -80px;
+}
+
+@media (max-width: 768px) {
+   .about__list {
+      flex-direction: column;
+      gap: 35px;
+   }
+
+   .about__container {
+      gap: 70px;
+   }
+
+
+
+   .about__content::before {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg, #C0A26D, #F5D9A9, #B1966A, #C0A26D);
+      margin-bottom: 10px;
+   }
+
+   .item-about:nth-child(2) {
+      margin-right: 0px;
+   }
+}
+
+.item-about__img {}
+
+.item-about__title {
+   line-height: 120%;
+   max-width: 323px;
+   text-align: center;
+   font-size: 30px;
+   font-weight: bold;
+   color: #fff;
+}
+
+.about__content {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   text-align: center;
+   position: relative;
+
+}
+
+
+
+.about__title {
+   font-size: 45px;
+   margin-bottom: 20px;
+}
+
+.about__text {
+   font-weight: 500;
+   font-size: 24px;
+}
+
+.about__text p {
+   background: linear-gradient(90deg, #ffffff, #f8ddaf, #ffffff, #f5daab);
+   /* Додаємо один і той же колір на початку і в кінці */
+   background-size: 300%;
+   /* Щоб створити ефект руху */
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+   animation: gradientAnimationText 5s ease-in-out infinite;
+}
+
+
+@keyframes gradientAnimationText {
+   0% {
+      background-position: 0% 50%;
+      /* Початкове положення градієнту */
+   }
+
+   50% {
+      background-position: 100% 50%;
+      /* Переміщення градієнту до кінця */
+   }
+
+   100% {
+      background-position: 0% 50%;
+      /* Повернення до початкового положення */
+   }
+}
+
+.about__text p:not(:last-child) {
+   margin-bottom: 20px;
+}
+
+.about__text span {
+   font-weight: 600;
+}
+
+/*---SERVICES------------------------------------------------------------------------------------------------------------*/
+
+
+
+.services {}
+
+.container-left {
+   display: flex;
+   justify-content: end;
+}
+
+.services__image {
+   position: absolute;
+   left: 0;
+
+}
+
+.services__image::after {
+   content: '';
+   display: block;
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   top: 0;
+   left: 0;
+   transition: all .5s ease;
+}
+
+.services__image:hover::after {
+   background: rgba(0, 0, 0, 55%);
+}
+
+.services__content {
+   z-index: 5;
+   position: relative;
+}
+
+.services__content::after {
+   content: '';
+   display: block;
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   top: 0;
+   left: 0;
+   z-index: -1;
+   background-color: #221D17;
+   opacity: 0.5;
+   padding-bottom: 26px;
+
+}
+
+
+.services__title {
+   font-size: 37px;
+   margin-bottom: 30px;
+   max-width: 500px;
+}
+
+.services__text {
+   max-width: 565px;
+}
+
+.services__text p {
+   font-weight: 400;
+   font-size: 28px;
+   background: linear-gradient(90deg, #ffffff, #f8ddaf, #ffffff, #f5daab);
+   /* Додаємо один і той же колір на початку і в кінці */
+   background-size: 300%;
+   /* Щоб створити ефект руху */
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+   animation: gradientAnimationText 5s ease-in-out infinite;
+}
+
+.services__text span {
+   font-weight: 600;
+   margin-right: 5px;
+   color: #FFF;
+   background: #fff;
+   background-size: 300%;
+   /* Щоб створити ефект руху */
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+}
+
+@media (max-width: 668px) {
+   .services__image::after {
+      background-color: #221D17;
+      opacity: 0.7;
+   }
+
+   .services__content::after {
+      background-color: transparent;
+      opacity: 1;
+   }
+
+   .services__content {
+      text-align: center;
+      max-width: 100%;
+   }
+
+   .services__title {
+      max-width: 100%;
+   }
+
+   .container-left {
+      justify-content: center;
+   }
+}
+
+@media (max-width: 592px) {
+
+
+   .services__text p {
+      font-size: 24px;
+   }
+}
+
+@media (max-width: 530px) {
+   .services__text {
+      max-width: 100%;
+      text-align: left;
+   }
+
+   .services__image {
+      width: 100%;
+   }
+
+   .services__image img {
+      max-height: 100px;
+      width: 100%;
+   }
+
+   .services__title {
+      font-size: 35px;
+   }
+}
+
+@media (max-width: 400px) {
+   .services__title {
+      font-size: 28px;
+   }
+
+   .services__image img {
+      max-height: 72px;
+   }
+}
+
+/*---ADVANTAGES------------------------------------------------------------------------------------------------------------*/
+
+
+.advantages {}
+
+.advantages__container {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+
+}
+
+.advantages__header {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   text-align: center;
+   gap: 25px;
+   margin-bottom: 75px;
+}
+
+.advantages__title {
+   font-size: 45px;
+}
+
+
+
+.advantages__subtitle {
+   font-weight: 500;
+   font-size: 33px;
+   color: #fff;
+}
+
+.advantages__list {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   flex-wrap: wrap;
+}
+
+@media (max-width: 1000px) {
+   .advantages__list {
+      justify-content: space-around;
+      gap: 20px;
+   }
+}
+
+@media (max-width: 520px) {
+   .advantages__title {
+      font-size: 32px;
+   }
+
+   .advantages__subtitle {
+      font-size: 22px;
+   }
+
+   .advantages__header {
+      gap: 10px;
+      margin-bottom: 40px;
+   }
+}
+
+.item-advantages {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   text-align: center;
+   gap: 25px;
+   max-width: 245px;
+}
+
+.item-advantages__image {
+   min-height: 100px;
+}
+
+.item-advantages__text {
+   font-weight: 700;
+   font-size: 15px;
+   background: linear-gradient(90deg, #ffffff, #f8ddaf, #ffffff, #f5daab);
+   /* Додаємо один і той же колір на початку і в кінці */
+   background-size: 300%;
+   /* Щоб створити ефект руху */
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+   animation: gradientAnimationText 5s ease-in-out infinite;
+}
+
+/*---INSERT------------------------------------------------------------------------------------------------------------*/
+.page__insert {}
+
+.insert__image {
+   position: relative;
+}
+
+.insert__image:hover::before {
+   background-color: rgba(0, 0, 0, 55%);
+}
+
+.insert__image::before {
+   content: '';
+   display: block;
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   top: 0;
+   left: 0;
+   transition: all .5s ease;
+}
+
+.insert__image img {
+   width: 100%;
+   min-height: 150px;
+}
+
+/*---FEEDBACK------------------------------------------------------------------------------------------------------------*/
+
+
+
+.feedback {}
+
+.feedback__container {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+}
+
+.feedback__title {
+   font-weight: 600;
+   font-size: 25px;
+   text-align: center;
+   margin-bottom: 35px;
+}
+
+.feedback__form {
+   max-width: 840px;
+   display: flex;
+   flex-direction: column;
+   width: 100%;
+   padding: 33px 41px;
+   background-color: rgba(0, 0, 0, 25%);
+   border-radius: 15px;
+   /* border: double 4px transparent;
+   background-image: linear-gradient(#1b1613, #1b1613), radial-gradient(circle at top left, #C0A26D, #F5D9A9, #B1966A);
+   background-origin: border-box;
+   background-clip: content-box, border-box; */
+   border: 3px solid #B1966A;
+
+}
+
+
+
+.form-feedback__inputs {
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   gap: 15px;
+   margin-bottom: 27px;
+}
+
+.form-feedback__input {
+   padding: 17px 20px;
+   max-width: 365px;
+   width: 100%;
+   border: 1px solid #b18d5b;
+   border-radius: 5px;
+   background-color: #1d1812;
+   color: #ffffff;
+   font-size: 18px;
+   -webkit-transition: all 0.5s ease;
+   transition: all 0.5s ease;
+}
+
+.form-feedback__input:hover {
+   background-color: #14110c;
+}
+
+.form-feedback__submit {
+   display: flex;
+   justify-content: end;
+}
+
+.form-feedback__button {
+   padding: 11px 27px;
+   font-weight: 500;
+   font-size: 24px;
+   min-height: 50px;
+   border-radius: 5px;
+}
+
+@media (max-width: 650px) {
+   .form-feedback__inputs {
+      grid-template-columns: 1fr;
+      gap: 15px;
+      margin-bottom: 15px;
+   }
+
+   .form-feedback__input {
+      width: 100%;
+      max-width: 100%;
+   }
+
+   .form-feedback__button {
+      font-size: 18px;
+   }
+
+   .form-feedback {
+      padding: 20px 30px;
+   }
+}
+
+/*---FOOTER------------------------------------------------------------------------------------------------------------*/
+
+.footer {
+   background-color: #1A1611;
+}
+
+.footer__container {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   max-width: 1234px;
+}
+
+.footer__contacts {}
+
+.footer__menu {
+   display: flex;
+   flex-direction: column;
+   align-items: start;
+   gap: 25px;
+}
+
+.footer__link {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   gap: 10px;
+   position: relative;
+   font-weight: 400;
+   font-size: 31px;
+   color: #fff;
+   position: relative;
+   text-decoration: none;
+   transition: all .5s ease;
+}
+
+.footer__link:hover::before {
+   transform: scale(1.1);
+}
+
+.footer__link:after {
+   content: "";
+   display: block;
+   position: absolute;
+   right: 0;
+   bottom: -3px;
+   width: 0;
+   height: 2px;
+   /* Высота линии */
+   background-color: #fff;
+   /* Цвет подчеркивания при исчезании линии*/
+   transition: width 0.5s;
+   /* Время эффекта */
+}
+
+.footer__link:hover:after {
+   content: "";
+   width: 89%;
+   display: block;
+   position: absolute;
+   left: 35px;
+   bottom: -3px;
+   height: 2px;
+   /* Высота линии */
+   background-color: white;
+   /* Цвет подчеркивания при появлении линии*/
+   transition: width 0.5s;
+   /* Время эффекта */
+}
+
+.footer__link_phone::before {
+   content: '';
+   display: block;
+   background: url('../img/footer/phone.png') no-repeat center / cover;
+   width: 25px;
+   height: 25px;
+}
+
+.footer__link_email::before {
+   content: '';
+   display: block;
+   background: url('../img/footer/email.png') no-repeat center;
+   width: 31px;
+   height: 23px;
+}
+
+.footer__link_email:hover:after {
+   width: 92%;
+   left: 40px;
+}
+
+.footer__image {}
+
+@media (max-width: 768px) {
+   .footer__image {
+      display: none;
+   }
+
+   .footer {
+      padding: 20px 0;
+   }
+
+   .footer__link {
+      gap: 5px;
+      font-size: 24px;
+
+
+   }
+}
+
+@media (max-width: 420px) {
+
+   .footer__link {
+      font-size: 18px;
+   }
+}
+
+/*---MEDIA------------------------------------------------------------------------------------------------------------*/

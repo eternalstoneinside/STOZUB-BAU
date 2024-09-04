@@ -17,7 +17,7 @@ document.onscroll = function () {
 
 
 
-const menuLinks = document.querySelectorAll('.menu__link[data-goto]')
+const menuLinks = document.querySelectorAll('.scrollto[data-goto]')
 
 if (menuLinks.length > 0) {
    menuLinks.forEach(menuLink => {

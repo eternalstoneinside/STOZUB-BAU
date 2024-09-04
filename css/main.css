@@ -182,7 +182,6 @@ h6 {
 .page__main {
    padding: 60px 0;
    background: url('../img/main/bg-main.png') no-repeat center / cover;
-   background-attachment: fixed;
 }
 
 .page__about {
